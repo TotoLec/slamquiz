@@ -58,7 +58,7 @@ class QuestionControllerTest extends WebTestCase
     public function testSecuredRoleAdmin()
     {
         $this->logIn('admin', 'ROLE_ADMIN');
-        $crawler = $this->client->request('GET', '/question/new');
+        $crawler = $this->client->request('GET', '/question/2/new');
 
         // Asserts that /question/new path exists and don't return an error
         $this->assertSame(Response::HTTP_OK, $this->client->getResponse()->getStatusCode());
