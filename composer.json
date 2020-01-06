@@ -73,6 +73,9 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+        "compile": [
+            "psql $DATABASE_URL < initial-prod-data.dump.sql"
         ]
     },
     "conflict": {
