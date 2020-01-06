@@ -2,6 +2,7 @@ Slam Quiz
 =========
 
 ![Software interface](assets/screenshot_home.jpg)
+![Deploy on Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 Install
 =======
