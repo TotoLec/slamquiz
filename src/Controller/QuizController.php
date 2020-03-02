@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use DateTime;
 use App\Entity\Quiz;
 use App\Form\QuizType;
 use App\Repository\QuizRepository;
@@ -31,6 +32,7 @@ class QuizController extends AbstractController
     public function new(Request $request): Response
     {
         $quiz = new Quiz();
+        $quiz->setCreatedAt(new DateTime());
         $form = $this->createForm(QuizType::class, $quiz);
         $form->handleRequest($request);
 
@@ -64,6 +66,7 @@ class QuizController extends AbstractController
      */
     public function edit(Request $request, Quiz $quiz): Response
     {
+        $quiz->setUpdatedAt(new DateTime());
         $form = $this->createForm(QuizType::class, $quiz);
         $form->handleRequest($request);
 
