@@ -20,20 +20,16 @@
                 <td>{{ quiz.summary }}</td>
             </tr>
             <tr>
+                <th>Category</th>
+                <td>{{ quiz.categories.shortname }}</td>
+            </tr>
+            <tr>
                 <th>Number_of_question</th>
                 <td>{{ quiz.numberOfQuestion }}</td>
             </tr>
             <tr>
                 <th>Active</th>
                 <td>{{ quiz.active ? 'Yes' : 'No' }}</td>
-            </tr>
-            <tr>
-                <th>Created_at</th>
-                <td>{{ quiz.createdAt ? quiz.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Updated_at</th>
-                <td>{{ quiz.updatedAt ? quiz.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
         </tbody>
     </table>
