@@ -22,7 +22,7 @@ class QuizRepository extends ServiceEntityRepository
     public function findAll()
     {
         $builder = $this->createQueryBuilder('c');
-        $builder->orderBy('c.text', 'ASC');
+        $builder->orderBy('c.title', 'ASC');
         return $builder->getQuery()->getResult();
     }
 
