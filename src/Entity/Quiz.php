@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\QuizRepository")
@@ -47,6 +49,13 @@ class Quiz
      */
     private $updated_at;
 
+    public function __construct()
+    {
+        $this->quiz = new ArrayCollection();
+        $this->setCreatedAt(new \DateTime());
+        $this->setUpdatedAt(new \DateTime());
+    }
+    
     public function getId(): ?int
     {
         return $this->id;
