@@ -3,9 +3,27 @@
 {% block title %}New Workout{% endblock %}
 
 {% block body %}
-    <h1>Create new Workout</h1>
 
     {{ include('workout/_form.html.twig') }}
 
-    <a href="{{ path('workout_index') }}">back to list</a>
+    <h1>Questionnaire "{{ quiz.title }}"</h1>
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>Category :</td>
+                <td>{{ quiz.categories.shortname }}</td>
+            </tr>
+            <tr>
+                <td>Résumé :</td>
+                <td>{{ quiz.summary }}</td>
+            </tr>
+            <tr>
+                <td>Nbr de question :</td>
+                <td>{{ quiz.NumberOfQuestion }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="mt-3 btn btn-secondary mr-2" href="/quiz/"><i class="fas fa-arrow-circle-left"></i> Retourner à la liste</a>
+    <button class="mt-3 float-right btn btn-primary mr-2" type="submit">Suivant <i class="fas fa-arrow-circle-right"></i></button>
 {% endblock %}
